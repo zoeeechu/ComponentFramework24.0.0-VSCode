@@ -1,0 +1,62 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch ComponentFramework",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\bin\\Debug\\ComponentFramework.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+              {
+                "name": "PATH",
+                "value": "${env:PATH};C:\\ComponentFramework\\OpenGL\\dll;C:\\ComponentFramework\\SDL\\dll"
+              }
+            ],
+            "console": "integratedTerminal",
+            "preLaunchTask": "C/C++: cl.exe build active file",
+            "justMyCode": true,  
+            "skipFiles": [
+              "<path to system files>",   
+              "${workspaceFolder}/**/vcruntime/*.h",
+              "${workspaceFolder}/**/windows/**",  
+              "**/vcruntime/*.h",
+              "**/windows/**",
+              "**/external/**",  
+              "**/exe_common.inl"
+            ],
+            "MIMode": "gdb",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              }
+            ],
+            "miDebuggerPath": "gdb",
+            "logging": {
+              "trace": true,
+              "traceResponse": true,
+              "engineLogging": true
+            }
+          },
+          {
+            "name": "Build 2022",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "./build.bat -2022; cd ./ComponentFramework; msbuild; if ($?) { $env:PATH += \";C:\\GameDev\\OpenGL\\dll;C:\\GameDev\\SDL\\dll\";}",
+            "cwd": "${workspaceFolder}",
+        },
+        {
+          "name": "Build 2019",
+          "type": "PowerShell",
+          "request": "launch",
+          "script": "./build.bat -2019; cd ./ComponentFramework; msbuild; if ($?) { $env:PATH += \";C:\\GameDev\\OpenGL\\dll;C:\\GameDev\\SDL\\dll\";}",
+          "cwd": "${workspaceFolder}",
+      }
+      
+    ]
+    
+}

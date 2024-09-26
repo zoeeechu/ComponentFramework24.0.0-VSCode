@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+GameEngineLog.txt
+ComponentFramework/ComponentFramework.vcxproj.filters
+ComponentFramework/ComponentFramework.vcxproj
+ComponentFramework.sln
+ComponentFramework.vcxproj
