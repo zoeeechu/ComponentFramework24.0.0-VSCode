@@ -46,14 +46,14 @@
             "name": "Build 2022",
             "type": "PowerShell",
             "request": "launch",
-            "script": "./build.bat -2022; cd ./ComponentFramework; msbuild; if ($?) { $env:PATH += \";C:\\GameDev\\OpenGL\\dll;C:\\GameDev\\SDL\\dll\";}",
+            "script": "./build.bat -2022; msbuild; if ($?) { $env:PATH += \";C:\\GameDev\\OpenGL\\dll;C:\\GameDev\\SDL\\dll\";}",
             "cwd": "${workspaceFolder}",
         },
         {
           "name": "Build 2019",
           "type": "PowerShell",
           "request": "launch",
-          "script": "./build.bat -2019; cd ./ComponentFramework; msbuild; if ($?) { $env:PATH += \";C:\\GameDev\\OpenGL\\dll;C:\\GameDev\\SDL\\dll\";}",
+          "script": "./build.bat -2019; msbuild; if ($?) { $env:PATH += \";C:\\GameDev\\OpenGL\\dll;C:\\GameDev\\SDL\\dll\";}",
           "cwd": "${workspaceFolder}",
       }
       
